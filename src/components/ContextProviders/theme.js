@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-import themed from "theme-responsively";
+import themed, { breakpoints } from "theme-responsively";
 
 export const EXTRASMALL = "extraSmall";
 export const SMALL = "small";
@@ -24,9 +24,14 @@ const fontSize = {
     [EXTRALARGE]: "2rem"
 };
 
+const breaks = {
+    [SMALL]: { max: 1024 },
+    [LARGE]: { min: 1023 }
+};
+
 const theme = {
     [SMALL]: {
-        break: { max: 1024 },
+        break: breaks[SMALL],
         spacing: {
             [SMALL]: space[EXTRASMALL],
             [MEDIUM]: space[SMALL],
@@ -39,7 +44,7 @@ const theme = {
         }
     },
     [LARGE]: {
-        break: { min: 1023 },
+        break: breaks[LARGE],
         spacing: {
             [SMALL]: space[SMALL],
             [MEDIUM]: space[LARGE],
@@ -83,5 +88,6 @@ export const darkMode = {
 export default colors => ({
     colors,
     sizing: themed(css)(theme, "spacing"),
-    font: themed(css)(theme, "font")
+    font: themed(css)(theme, "font"),
+    breakpoints: breakpoints(css)(breaks)
 });
