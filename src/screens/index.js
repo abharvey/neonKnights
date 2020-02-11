@@ -1,5 +1,5 @@
 import Home from "./Home";
-import Quiz from "./Quiz";
-import Results from "./Results";
+import Quiz from "./Quiz/Quiz";
+import Results from "./Results/Results";
 
 export { Home, Quiz, Results };

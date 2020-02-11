@@ -1,13 +1,13 @@
-import { store } from "./ContextProviders/DataProvider";
 import { themeToggle } from "./ContextProviders/ThemeProvider";
 
 import Header from "./Header";
 import ContentPanel from "./ContentPanel";
 import FooterNavigation from "./FooterNavigation";
+import Loading from "./Loading";
 
-export { store, themeToggle };
+export { themeToggle };
 
-export { Header, ContentPanel, FooterNavigation };
+export { Header, ContentPanel, FooterNavigation, Loading };
 
 export { ContextProviders } from "./ContextProviders/ContextProviders";
 export { CleanStyles } from "./CleanStyles";

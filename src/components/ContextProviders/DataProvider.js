@@ -1,21 +1,13 @@
-import React, { createContext, useReducer } from "react";
-import defaultStore from "data/defaultStore";
+import React, { useReducer } from "react";
 
-const store = createContext(defaultStore);
-
-const { Provider } = store;
+import { Provider } from "data/store";
+import defaultState from "data/defaultState";
+import { appReducer } from "data/reducers";
 
 const DataProvider = ({ children }) => {
-    const [state, dispatch] = useReducer((state, action) => {
-        const newState = { ...state };
-        switch (action.type) {
-            default:
-                return newState;
-        }
-    }, defaultStore);
+    const [state, dispatch] = useReducer(appReducer, defaultState);
 
     return <Provider value={{ state, dispatch }}>{children}</Provider>;
 };
 
-export { store };
 export default DataProvider;
