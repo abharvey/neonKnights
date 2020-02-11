@@ -7,6 +7,7 @@ export const appReducer = (state, action) => {
         }
         case "QUESTIONS/LOAD": {
             newState.questions = action.questions;
+            newState.currentQuestion = 0;
             return newState;
         }
         case "QUESTIONS/NAV_NEXT": {

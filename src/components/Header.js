@@ -4,13 +4,13 @@ import { centeredFlexRow } from "./cssUtils";
 
 const Header = styled.div`
     width: 100%;
-    height: 10%;
+    min-height: 10%;
 
     ${centeredFlexRow};
 
     ${({ theme: { colors } }) => css`
-        color: ${colors.primary};
-        background-color: ${colors.secondaryBackground};
+        color: ${colors.lightText};
+        background-color: ${colors.primaryBackground};
     `};
 `;
 

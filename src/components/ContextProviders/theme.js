@@ -7,6 +7,7 @@ export const SMALL = "small";
 export const MEDIUM = "medium";
 export const LARGE = "large";
 export const EXTRALARGE = "extraLarge";
+export const GIGANTIC = "gigantic";
 
 const space = {
     [EXTRASMALL]: 4,
@@ -19,9 +20,9 @@ const space = {
 const fontSize = {
     [EXTRASMALL]: "0.75rem",
     [SMALL]: "1rem",
-    [MEDIUM]: "1.35rem",
-    [LARGE]: "1.6rem",
-    [EXTRALARGE]: "2rem"
+    [MEDIUM]: "1.5rem",
+    [LARGE]: "2rem",
+    [EXTRALARGE]: "2.5rem"
 };
 
 const breaks = {
@@ -33,20 +34,7 @@ const theme = {
     [SMALL]: {
         break: breaks[SMALL],
         spacing: {
-            [SMALL]: space[EXTRASMALL],
-            [MEDIUM]: space[SMALL],
-            [LARGE]: space[MEDIUM]
-        },
-        font: {
-            [SMALL]: `font-size: ${fontSize[EXTRASMALL]}`,
-            [MEDIUM]: `font-size: ${fontSize[SMALL]}`,
-            [LARGE]: `font-size: ${fontSize[MEDIUM]}`
-        }
-    },
-    [LARGE]: {
-        break: breaks[LARGE],
-        spacing: {
-            [SMALL]: space[SMALL],
+            [SMALL]: space[MEDIUM],
             [MEDIUM]: space[LARGE],
             [LARGE]: space[EXTRALARGE]
         },
@@ -55,19 +43,35 @@ const theme = {
             [MEDIUM]: `font-size: ${fontSize[LARGE]}`,
             [LARGE]: `font-size: ${fontSize[EXTRALARGE]}`
         }
+    },
+    [LARGE]: {
+        break: breaks[LARGE],
+        spacing: {
+            [SMALL]: space[SMALL],
+            [MEDIUM]: space[MEDIUM],
+            [LARGE]: space[LARGE]
+        },
+        font: {
+            [SMALL]: `font-size: ${fontSize[SMALL]}`,
+            [MEDIUM]: `font-size: ${fontSize[MEDIUM]}`,
+            [LARGE]: `font-size: ${fontSize[LARGE]}`
+        }
     }
 };
 
 export const radical90s = {
-    primary: "#EA4693",
+    primary: "#FF2188",
     secondary: "#52489C",
     tertiary: "#77EFBF",
 
     primaryBackground: "#49CBE5",
     secondaryBackground: "#CFE560",
+    lightBackground: "#fffafa",
 
-    primaryText: "#2D2856",
-    secondaryText: "#F9CCE1",
+    dropShadow: "#2D2856",
+
+    lightText: "#fffafa",
+    darkText: "#2D2856",
 
     error: "#FA113D"
 };
@@ -79,7 +83,7 @@ export const darkMode = {
     primaryBackground: "#000000",
     secondaryBackground: "#222",
 
-    primaryText: "#DDD",
+    lightText: "#DDD",
     secondaryText: "#666",
 
     error: "#FA113D"
