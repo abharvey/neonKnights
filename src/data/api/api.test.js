@@ -1,9 +1,10 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { act, cleanup, render } from "@testing-library/react";
 
-import DataProvider from "components/ContextProviders/DataProvider";
+import DataProvider from "components/ContextProviders/__mocks__/DataProvider";
+import defaultState from "data/defaultState";
 
-import { useLoadQuestions } from "./";
+import { useLoadQuestions, requiredQuestionInfo } from "./";
 
 const mockQuestionResponse = {
     results: [
@@ -27,7 +28,19 @@ const mockQuestionResponse = {
 };
 
 describe("Loading question data", () => {
-    it("loads the minimal question info into the store", () => {
+    let dispatch, state;
+
+    beforeEach(() => {
+        fetch.resetMocks();
+        dispatch = jest.fn();
+        state = defaultState;
+    });
+
+    afterEach(() => {
+        cleanup();
+    });
+
+    it("loads the minimal question info into the store", async () => {
         fetch.mockResponseOnce(JSON.stringify(mockQuestionResponse));
 
         const TestHook = () => {
@@ -35,10 +48,33 @@ describe("Loading question data", () => {
             return null;
         };
 
-        const { getByTestId } = render(
-            <DataProvider>
-                <TestHook />
-            </DataProvider>
+        await act(async () => {
+            render(
+                <DataProvider {...{ state, dispatch }}>
+                    <TestHook />
+                </DataProvider>
+            );
+        });
+
+        expect(dispatch).toHaveBeenCalledTimes(3);
+
+        const questions = mockQuestionResponse.results.map(
+            requiredQuestionInfo
         );
+
+        expect(dispatch).toHaveBeenNthCalledWith(1, {
+            loading: true,
+            type: "LOADING"
+        });
+
+        expect(dispatch).toHaveBeenNthCalledWith(2, {
+            questions,
+            type: "QUESTIONS/LOAD"
+        });
+
+        expect(dispatch).toHaveBeenNthCalledWith(3, {
+            loading: false,
+            type: "LOADING"
+        });
     });
 });

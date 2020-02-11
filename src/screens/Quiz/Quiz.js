@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { loadQuestions } from "data/api";
+import { useLoadQuestions } from "data/api";
 
-import { Header, ContentPanel, FooterNavigation, Loading } from "components";
+import { Header, ContentPanel, FooterNavigation } from "components";
 
 const Quiz = () => {
-    const [isLoading, setLoading] = useState(true);
-
-    useEffect(() => {
-        (async function() {
-            const questionData = await loadQuestions();
-
-            setLoading(false);
-        })();
-    }, []);
-
-    if (isLoading) {
-        return <Loading />;
-    }
+    useLoadQuestions();
 
     return (
         <>
