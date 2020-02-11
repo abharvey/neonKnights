@@ -1,8 +1,9 @@
-import React, { createContext } from "react";
+import React from "react";
 import { render } from "@testing-library/react";
-import { useLoadQuestions } from "./";
 
 import DataProvider from "components/ContextProviders/DataProvider";
+
+import { useLoadQuestions } from "./";
 
 const mockQuestionResponse = {
     results: [
