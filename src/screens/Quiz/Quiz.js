@@ -1,6 +1,5 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import styled, { css } from "styled-components";
 
 import { useLoadQuestions } from "data/api";
 import {
@@ -14,24 +13,13 @@ import {
     Header,
     ContentPanel,
     FooterNavigation,
-    Loading,
-    LARGE
+    QuestionCount
 } from "components";
-import { centeredFlexRow } from "components/cssUtils";
 
 import CategoryLabel from "./components/CategoryLabel";
 import QuestionCard from "./components/QuestionCard";
 import AnswerButton from "./components/AnswerButton";
-
-const QuestionCount = styled.span`
-    ${({ theme: { colors, font } }) => css`
-        ${centeredFlexRow};
-        font-weight: bold;
-        color: ${colors.secondaryBackground};
-        text-shadow: 1px 1px ${colors.primaryBackground};
-        ${font`${LARGE}`};
-    `};
-`;
+import QuizSkeleton from "./QuizSkeleton";
 
 const Quiz = () => {
     useLoadQuestions();
@@ -45,10 +33,8 @@ const Quiz = () => {
     };
 
     if (loading) {
-        return <Loading>Loading...</Loading>;
-    }
-
-    if (current >= total) {
+        return <QuizSkeleton />;
+    } else if (current > total) {
         return <Redirect to="/results" />;
     }
 

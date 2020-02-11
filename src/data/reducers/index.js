@@ -20,6 +20,10 @@ export const appReducer = (state, action) => {
             newState.answers[state.currentQuestion] = action.answer;
             return newState;
         }
+        case "QUESTIONS/CLEAR_ANSWERS": {
+            newState.answers = [];
+            return newState;
+        }
         default:
             return newState;
     }

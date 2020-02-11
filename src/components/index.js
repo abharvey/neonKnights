@@ -1,6 +1,7 @@
 import { themeToggle } from "./ContextProviders/ThemeProvider";
 
 import Header from "./Header";
+import QuestionCount from "./QuestionCount";
 import ContentPanel from "./ContentPanel";
 import FooterNavigation from "./FooterNavigation";
 import Loading from "./Loading";
@@ -8,7 +9,14 @@ import Polygon from "./Polygon";
 
 export { themeToggle };
 
-export { Header, ContentPanel, FooterNavigation, Loading, Polygon };
+export {
+    Header,
+    ContentPanel,
+    FooterNavigation,
+    Loading,
+    Polygon,
+    QuestionCount
+};
 
 export { ContextProviders } from "./ContextProviders/ContextProviders";
 export { CleanStyles } from "./CleanStyles";
