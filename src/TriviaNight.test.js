@@ -4,6 +4,6 @@ import TriviaNight from "./TriviaNight";
 
 test("renders learn react link", () => {
     const { getByText } = render(<TriviaNight />);
-    const headerElement = getByText(/welcome to trivia challenge/i);
+    const headerElement = getByText(/welcome to the trivia challenge/i);
     expect(headerElement).toBeInTheDocument();
 });
