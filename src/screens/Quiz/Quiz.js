@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import { unescape } from "lodash";
 
 import { useLoadQuestions } from "data/api";
 import {
@@ -44,7 +45,7 @@ const Quiz = () => {
                 <CategoryLabel>{question.category}</CategoryLabel>
             </Header>
             <ContentPanel>
-                <Card>{question.question}</Card>
+                <Card>{unescape(question.question)}</Card>
             </ContentPanel>
             <QuestionCount>
                 {current} / {total}

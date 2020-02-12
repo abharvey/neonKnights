@@ -12,6 +12,10 @@ npm start
 I had some fun with the design, which ended up sacrificing test cases once the 8 hour mark hit. I was going for a 90s retro vibe with colors and shapes. Were I to put more time into the design some notable areas are lacking in attention around testing. The UI components should be better tested in my opinion and I could easily spend a couple more hours adding more robust edge cases for state management.
 I also would put in another hour or so to clean up css style areas such as the focus and active states on the buttons as well as the results page question list.
 
+A game app like this at first I had planned to modify the node server and use an api to remove the question answers from the state, as the first thought I had was that you could simply inspect get all the questions. This was an idea I sacrificed in the name of time.
+
+It was suggested to use TypeScript if we know it, however I felt I could do more in the time alloted by not onboarding TypeScript. I would have used it very sparsely to do more with the time, and that wouldn't showcase my real potential with it.
+
 ## Libraries
 
 #### styled-components

@@ -6,7 +6,6 @@ import { MEDIUM, LARGE } from "components";
 const CardContainer = styled.div`
     min-width: 200px;
     max-width: 800px;
-    height: 250px;
     min-height: 250px;
     border-radius: 3px;
     transform: skew(10deg);

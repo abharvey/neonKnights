@@ -44,6 +44,7 @@ const ResultList = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-left: 16px;
 `;
 
 const answerAsResult = (answer, i) => (

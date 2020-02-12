@@ -1,24 +1,24 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { unescape } from "lodash";
 
-import { LARGE } from "components";
-
+import { LARGE, SMALL } from "components";
 const ResultWrapper = styled.div`
     ${({ theme: { sizing, colors } }) => css`
         color: ${colors.primaryText};
         ${sizing`
-            margin: 0 ${LARGE}px
+            margin: ${SMALL}px ${LARGE}px
         `}
     `}
 `;
 
 const Result = ({ answer }) => {
     const { question, isCorrect } = answer;
-    console.log(question);
+
     return (
         <ResultWrapper>
             {isCorrect ? "✔" : "❌"}
-            {question}
+            {unescape(question)}
         </ResultWrapper>
     );
 };
