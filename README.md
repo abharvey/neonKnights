@@ -38,4 +38,6 @@ craco is a library that allows you to extend the create react app configuration 
 
 This is a fairly small application, and with the context API I decided to use the reducer hook for state management to both emulate redux and simplify the setup, particularly over MobX/MobX State Tree. There was no benefit to expand on the state management for this.
 
-##
+#### Lodash
+
+Normally I try to pair with as few libraries as possible, so lodash or similar isn't something I'll reach for. However many questions were coming in with escape characters and lodash's unescape made more sense for this project than coding my own up. Unfortunately it's not perfect as some characters are still not being caught. That's something additional test cases and a hand built solution could help with.
