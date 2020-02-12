@@ -10,8 +10,10 @@ import {
     MEDIUM,
     SMALL,
     Polygon,
-    StyledLink
+    StyledLink,
+    Card
 } from "components";
+
 import { centeredFlexColumn } from "components/cssUtils";
 import Result from "./components/Result";
 
@@ -66,7 +68,9 @@ const Results = () => {
                 </Polygon>
             </Header>
             <ContentPanel>
-                <ResultList>{results.map(answerAsResult)}</ResultList>
+                <Card>
+                    <ResultList>{results.map(answerAsResult)}</ResultList>
+                </Card>
             </ContentPanel>
             <FooterNavigation>
                 <StyledLink to="/">Play Again?</StyledLink>
