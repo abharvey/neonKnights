@@ -30,6 +30,7 @@ describe("app reducer", () => {
         };
 
         expect(appReducer(testState, action)).toEqual({
+            currentQuestion: 0,
             questions: [
                 {
                     category: "Test",
@@ -63,6 +64,7 @@ describe("app reducer", () => {
         };
 
         expect(appReducer(testState, action)).toEqual({
+            currentQuestion: 0,
             questions: [
                 {
                     category: "Test",
