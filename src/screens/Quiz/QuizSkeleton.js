@@ -1,9 +1,8 @@
 import React from "react";
 
-import { Header, ContentPanel } from "components";
+import { Header, ContentPanel, Card } from "components";
 
 import CategoryLabel from "./components/CategoryLabel";
-import QuestionCard from "./components/QuestionCard";
 
 export default () => (
     <>
@@ -11,7 +10,7 @@ export default () => (
             <CategoryLabel>Loading...</CategoryLabel>
         </Header>
         <ContentPanel>
-            <QuestionCard>Loading...</QuestionCard>
+            <Card>Loading...</Card>
         </ContentPanel>
     </>
 );

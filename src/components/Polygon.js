@@ -17,8 +17,8 @@ const Polygon = styled.div`
     `};
 `;
 
-export default props => (
-    <Wrapper {...props}>
-        <Polygon />
+export default ({ children, ...rest }) => (
+    <Wrapper {...rest}>
+        <Polygon>{children}</Polygon>
     </Wrapper>
 );

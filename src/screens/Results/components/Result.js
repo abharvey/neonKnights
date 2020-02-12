@@ -5,20 +5,19 @@ import { LARGE } from "components";
 
 const ResultWrapper = styled.div`
     ${({ theme: { sizing, colors } }) => css`
-        & * {
-            ${sizing`
-                margin: ${LARGE}px
-            `}
-        }
+        color: ${colors.primaryText};
+        ${sizing`
+            margin: 0 ${LARGE}px
+        `}
     `}
 `;
 
 const Result = ({ answer }) => {
-    const { question, isRightAnswer } = answer;
+    const { question, isCorrect } = answer;
     console.log(question);
     return (
         <ResultWrapper>
-            {isRightAnswer ? "✔" : "❌"}
+            {isCorrect ? "✔" : "❌"}
             {question}
         </ResultWrapper>
     );

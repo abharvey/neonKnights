@@ -1,12 +1,20 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
+
 import { MEDIUM, LARGE } from "components";
 
-const AnswerButton = styled.button`
-    ${({ theme: { colors, font, sizing } }) => css`
-        border-width: 0px;
-        border-radius: 2px;
-        border-style: solid;
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    border-width: 0px;
+    border-radius: 2px;
+    border-style: solid;
 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    ${({ theme: { colors, font, sizing } }) => css`
         color: ${colors.lightText};
         background-color: ${colors.primary};
         border-color: ${colors.primary};
@@ -23,4 +31,4 @@ const AnswerButton = styled.button`
     `}
 `;
 
-export default AnswerButton;
+export default StyledLink;

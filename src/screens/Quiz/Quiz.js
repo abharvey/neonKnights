@@ -13,11 +13,11 @@ import {
     Header,
     ContentPanel,
     FooterNavigation,
-    QuestionCount
+    QuestionCount,
+    Card
 } from "components";
 
 import CategoryLabel from "./components/CategoryLabel";
-import QuestionCard from "./components/QuestionCard";
 import AnswerButton from "./components/AnswerButton";
 import QuizSkeleton from "./QuizSkeleton";
 
@@ -44,7 +44,7 @@ const Quiz = () => {
                 <CategoryLabel>{question.category}</CategoryLabel>
             </Header>
             <ContentPanel>
-                <QuestionCard>{question.question}</QuestionCard>
+                <Card>{question.question}</Card>
             </ContentPanel>
             <QuestionCount>
                 {current} / {total}

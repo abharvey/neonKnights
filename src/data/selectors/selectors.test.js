@@ -21,11 +21,11 @@ describe("derived data selectors", () => {
         expect(results(mockState)).toEqual([
             {
                 question: "Q1 Test",
-                isRightAnswer: true
+                isCorrect: true
             },
             {
                 question: "Q2 Test",
-                isRightAnswer: false
+                isCorrect: false
             }
         ]);
     });

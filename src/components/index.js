@@ -4,18 +4,21 @@ import Header from "./Header";
 import QuestionCount from "./QuestionCount";
 import ContentPanel from "./ContentPanel";
 import FooterNavigation from "./FooterNavigation";
-import Loading from "./Loading";
+import Card from "./Card";
+import StyledLink from "./StyledLink";
+
 import Polygon from "./Polygon";
 
 export { themeToggle };
 
 export {
+    Card,
     Header,
     ContentPanel,
     FooterNavigation,
-    Loading,
     Polygon,
-    QuestionCount
+    QuestionCount,
+    StyledLink
 };
 
 export { ContextProviders } from "./ContextProviders/ContextProviders";

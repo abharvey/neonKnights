@@ -29,7 +29,7 @@ export const useQuestionCount = () => {
 export const hasNextQuestion = state =>
     state.currentQuestion < state.questions.length - 1;
 
-const isEqualAnswer = (a1, a2) =>
+const isCorrectAnswer = (a1, a2) =>
     a1.toString().toLowerCase() === a2.toString().toLowerCase();
 
 export const results = state => {
@@ -38,11 +38,9 @@ export const results = state => {
     return answers.map((userAnswer, i) => {
         const { question, answer } = questions[i];
 
-        const isRightAnswer = isEqualAnswer(answer, userAnswer);
-
         return {
             question,
-            isRightAnswer
+            isCorrect: isCorrectAnswer(answer, userAnswer)
         };
     });
 };

@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import { MEDIUM, LARGE } from "components";
 
-const QuestionCardContainer = styled.div`
+const CardContainer = styled.div`
     min-width: 200px;
     max-width: 800px;
     height: 250px;
@@ -26,8 +26,7 @@ const QuestionCardContainer = styled.div`
             width: 100%;
             max-width: 100%;
             box-shadow: none;
-            height: 450px;
-            min-height: 450px;
+            min-height: 300px;
         `}
     `};
 `;
@@ -36,12 +35,11 @@ const QuestionText = styled.h2`
     transform: skew(-10deg);
 
     ${({ theme: { colors, font, breakpoints, sizing } }) => css`
-        ${font`${LARGE}`}
+        ${font`${MEDIUM}`}
 
         color: ${colors.darkText};
 
         ${sizing`
-            margin: ${MEDIUM}px;
             padding: ${LARGE}px;
         `}
 
@@ -52,7 +50,7 @@ const QuestionText = styled.h2`
 `;
 
 export default ({ children }) => (
-    <QuestionCardContainer>
+    <CardContainer>
         <QuestionText>{children}</QuestionText>
-    </QuestionCardContainer>
+    </CardContainer>
 );
